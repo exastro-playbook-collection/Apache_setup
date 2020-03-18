@@ -1,0 +1,126 @@
+###  vars file for ansible-apache
+
+##  setting httpd.conf
+
+###  Directive for Apache2.4,Apache2.2
+VAR_Apache_ServerTokens: 
+VAR_Apache_ServerRoot: /etc/httpd
+VAR_Apache_Timeout: 
+VAR_Apache_KeepAlive: 
+VAR_Apache_MaxKeepAliveRequests: 
+VAR_Apache_KeepAliveTimeout: 
+VAR_Apache_Listen: 80
+VAR_Apache_ExtendedStatus: 
+VAR_Apache_User: apache
+VAR_Apache_Group: apache
+VAR_Apache_ServerAdmin: root@localhost
+VAR_Apache_ServerName: 
+VAR_Apache_UseCanonicalName: 
+VAR_Apache_DocumentRoot: /var/www/html
+VAR_Apache_DirectoryIndex: index.html index.html.var
+VAR_Apache_AccessFileName: 
+VAR_Apache_TypesConfig: /etc/mime.types
+VAR_Apache_MIMEMagicFile: conf/magic
+VAR_Apache_HostnameLookups: 
+VAR_Apache_ErrorLog: logs/error_log
+VAR_Apache_LogLevel: warn
+VAR_Apache_LogFormat: 
+VAR_Apache_CustomLog: logs/access_log combined
+VAR_Apache_ServerSignature: 
+VAR_Apache_IndexOptions: FancyIndexing VersionSort NameWidth=* HTMLTable Charset=UTF-8
+VAR_Apache_AddDefaultCharset: UTF-8
+VAR_Apache_EnableMMAP: 
+VAR_Apache_EnableSendfile: 
+
+###  Directive for Apache2.2
+VAR_Apache_PidFile: run/httpd.pid
+VAR_Apache_DefaultType: text/plain
+
+###  Directive for Apache2.4
+VAR_Apache_LogFormat_IO: 
+
+
+### MPM Directive
+VAR_Apache_MPMType: 
+VAR_Apache_MinSpareServers: 5
+VAR_Apache_MaxSpareServers: 20
+VAR_Apache_ServerLimit: 256
+VAR_Apache_MaxClients: 
+VAR_Apache_MaxRequestWorkers: 
+VAR_Apache_MaxRequestsPerChild: 
+VAR_Apache_MaxConnectionsPerChild: 
+VAR_Apache_StartServers: 
+VAR_Apache_MinSpareThreads: 
+VAR_Apache_MaxSpareThreads: 
+VAR_Apache_ThreadsPerChild: 
+
+## setting proxy.conf
+VAR_Apache_Proxy:
+VAR_Apache_ProxyPass:
+VAR_Apache_ProxyPassReverse:
+VAR_Apache_ProxyPassReverseCookieDomain:
+VAR_Apache_ProxyPassReverseCookiePath:
+VAR_Apache_ProxyPassMatch:
+VAR_Apache_ProxySet:
+VAR_Apache_ProxyBadHeader:
+VAR_Apache_ProxyBlock:
+VAR_Apache_ProxyDomain:
+VAR_Apache_ProxyErrorOverride:
+VAR_Apache_ProxyIOBufferSize:
+VAR_Apache_ProxyMaxForwards:
+VAR_Apache_ProxyPassInterpolateEnv:
+VAR_Apache_ProxyPreserveHost:
+VAR_Apache_ProxyReceiveBufferSize:
+VAR_Apache_ProxyStatus:
+VAR_Apache_ProxyTimeout:
+VAR_Apache_ProxyVia:
+VAR_Apache_ProxyAddHeaders:
+VAR_Apache_ProxyPassInherit:
+VAR_Apache_ProxySourceAddress:
+
+## Apache Service vars
+VAR_Apache_ServiceState: stopped
+VAR_Apache_ServiceAuto: no
+
+
+## local vars
+
+### OS and version
+apache_OS_Version: RedHat7
+
+### Directive
+apache_Dest: /etc/httpd/conf/httpd.conf
+apache_Dest_Proxy: /etc/httpd/conf.d/proxy.conf
+apache_2_2_ServerTokens: OS
+apache_2_2_Timeout: 60
+apache_2_2_KeepAlive: 'Off'
+apache_2_2_MaxKeepAliveRequests: 100
+apache_2_2_KeepAliveTimeout: 15
+apache_2_2_UseCanonicalName: 'Off'
+apache_2_2_AccessFileName: .htaccess
+apache_2_2_HostnameLookups: 'Off'
+apache_2_2_ServerSignature: 'On'
+apache_2_4_EnableSendfile: 'On'
+
+### MPM vars
+### prefork
+apache_Prefork_StartServers: 8
+apache_Prefork_MaxRequestWorkers: 256
+apache_Prefork_MaxConnectionsPerChild: 4000
+
+### worker
+apache_Worker_StartServers: 4
+apache_Worker_MinSpareThreads: 25
+apache_Worker_MaxSpareThreads: 75
+apache_Worker_ThreadsPerChild: 25
+apache_Worker_MaxRequestWorkers: 300
+apache_Worker_MaxConnectionsPerChild: 0
+
+### event
+apache_Event_StartServers: 4
+apache_Event_MinSpareThreads: 25
+apache_Event_MaxSpareThreads: 75
+apache_Event_ThreadsPerChild: 25
+apache_Event_MaxRequestWorkers: 300
+apache_Event_MaxConnectionsPerChild: 0
+

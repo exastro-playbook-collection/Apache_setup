@@ -1,0 +1,89 @@
+{% if VAR_Apache_ProxyPass is defined and VAR_Apache_ProxyPass != None %}
+{% for apache_local_proxypass in VAR_Apache_ProxyPass %}
+{% if apache_local_proxypass != None %}
+ProxyPass {{ apache_local_proxypass }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxyPassReverse is defined and VAR_Apache_ProxyPassReverse != None %}
+{% for apache_local_proxypassreverse in VAR_Apache_ProxyPassReverse %}
+{% if apache_local_proxypassreverse != None %}
+ProxyPassReverse {{ apache_local_proxypassreverse }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxyPassReverseCookieDomain is defined and VAR_Apache_ProxyPassReverseCookieDomain != None %}
+{% for apache_local_proxypassreversecookiedomain in VAR_Apache_ProxyPassReverseCookieDomain %}
+{% if apache_local_proxypassreversecookiedomain != None %}
+ProxyPassReverseCookieDomain {{ apache_local_proxypassreversecookiedomain }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxyPassReverseCookiePath is defined and VAR_Apache_ProxyPassReverseCookiePath != None %}
+{% for apache_local_proxypassreversecookiepath in VAR_Apache_ProxyPassReverseCookiePath %}
+{% if apache_local_proxypassreversecookiepath != None %}
+ProxyPassReverseCookiePath {{ apache_local_proxypassreversecookiepath }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxyPassMatch is defined and VAR_Apache_ProxyPassMatch != None %}
+{% for apache_local_proxypassmatch in VAR_Apache_ProxyPassMatch %}
+{% if apache_local_proxypassmatch != None %}
+ProxyPassMatch {{ apache_local_proxypassmatch }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxySet is defined and VAR_Apache_ProxySet != None %}
+{% for apache_local_proxyset in VAR_Apache_ProxySet %}
+{% if apache_local_proxyset != None %}
+ProxySet {{ apache_local_proxyset }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if VAR_Apache_ProxyBadHeader is defined and VAR_Apache_ProxyBadHeader != None %}
+ProxyBadHeader {{ VAR_Apache_ProxyBadHeader }}
+{% endif %}
+{% if VAR_Apache_ProxyBlock is defined and VAR_Apache_ProxyBlock != None %}
+ProxyBlock {{ VAR_Apache_ProxyBlock }}
+{% endif %}
+{% if VAR_Apache_ProxyDomain is defined and VAR_Apache_ProxyDomain != None %}
+ProxyDomain {{ VAR_Apache_ProxyDomain }}
+{% endif %}
+{% if VAR_Apache_ProxyErrorOverride is defined and VAR_Apache_ProxyErrorOverride != None %}
+ProxyErrorOverride {{ VAR_Apache_ProxyErrorOverride }}
+{% endif %}
+{% if VAR_Apache_ProxyIOBufferSize is defined and VAR_Apache_ProxyIOBufferSize != None %}
+ProxyIOBufferSize {{ VAR_Apache_ProxyIOBufferSize }}
+{% endif %}
+{% if VAR_Apache_ProxyMaxForwards is defined and VAR_Apache_ProxyMaxForwards != None %}
+ProxyMaxForwards {{ VAR_Apache_ProxyMaxForwards }}
+{% endif %}
+{% if VAR_Apache_ProxyPassInterpolateEnv is defined and VAR_Apache_ProxyPassInterpolateEnv != None %}
+ProxyPassInterpolateEnv {{ VAR_Apache_ProxyPassInterpolateEnv }}
+{% endif %}
+{% if VAR_Apache_ProxyPreserveHost is defined and VAR_Apache_ProxyPreserveHost != None %}
+ProxyPreserveHost {{ VAR_Apache_ProxyPreserveHost }}
+{% endif %}
+{% if VAR_Apache_ProxyReceiveBufferSize is defined and VAR_Apache_ProxyReceiveBufferSize != None %}
+ProxyReceiveBufferSize {{ VAR_Apache_ProxyReceiveBufferSize }}
+{% endif %}
+{% if VAR_Apache_ProxyStatus is defined and VAR_Apache_ProxyStatus != None %}
+ProxyStatus {{ VAR_Apache_ProxyStatus }}
+{% endif %}
+{% if VAR_Apache_ProxyTimeout is defined and VAR_Apache_ProxyTimeout != None %}
+ProxyTimeout {{ VAR_Apache_ProxyTimeout }}
+{% endif %}
+{% if VAR_Apache_ProxyVia is defined and VAR_Apache_ProxyVia != None %}
+ProxyVia {{ VAR_Apache_ProxyVia }}
+{% endif %}
+{% if apache_OS_Version == "RedHat7" %}
+{% if VAR_Apache_ProxyAddHeaders is defined and VAR_Apache_ProxyAddHeaders != None %}
+ProxyAddHeaders {{ VAR_Apache_ProxyAddHeaders }}
+{% endif %}
+{% if VAR_Apache_ProxyPassInherit is defined and VAR_Apache_ProxyPassInherit != None %}
+ProxyPassInherit {{ VAR_Apache_ProxyPassInherit }}
+{% endif %}
+{% if VAR_Apache_ProxySourceAddress is defined and VAR_Apache_ProxySourceAddress != None %}
+ProxySourceAddress {{ VAR_Apache_ProxySourceAddress }}
+{% endif %}
+{% endif %}

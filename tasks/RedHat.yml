@@ -1,0 +1,26 @@
+---
+
+# 管理対象マシンへhttpd.confのチューニング
+  - name: setting ver2.2 httpd.conf
+    template: src=2.2_httpd.conf.j2 dest={{ apache_Dest }}
+    when: apache_OS_Version == "RedHat6"
+  
+  - name: setting ver2.4 httpd.conf
+    template: src=2.4_httpd.conf.j2 dest={{ apache_Dest }}
+    when: apache_OS_Version == "RedHat7"
+
+# Tomcat連携設定ファイルの配置
+
+  - name: settomg ver2.2 proxy.conf
+    template: src=proxy.conf.j2 dest={{ apache_Dest_Proxy }}
+    when:
+    - VAR_Apache_Proxy == True
+
+
+# httpdサービス自動起動設定
+  - name: httpd is enabled
+    service: name=httpd enabled={{ VAR_Apache_ServiceAuto }}
+
+# httpd起動・停止設定
+  - name: httpd is started
+    service: name=httpd state={{ VAR_Apache_ServiceState }}
